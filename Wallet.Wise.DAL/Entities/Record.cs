@@ -9,8 +9,6 @@ public class Record
     public DateTime Date { get; set; }
     public decimal Amount { get; set; }
     
-    
-    
     public Category Category { get; set; }
     
 }

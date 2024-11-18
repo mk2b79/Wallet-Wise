@@ -8,6 +8,7 @@ public class Category
     public string Name { get; set; }
     public string CurrencyCode { get; set; }
     public CategoryType CategoryType { get; set; }
-    
+
+    public ICollection<Record> Records { get; set; } = new List<Record>();
     // public Currency Currency { get; set; }
 }
