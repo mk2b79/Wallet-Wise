@@ -1,9 +1,15 @@
-﻿Microsoft Visual Studio Solution File, Format Version 12.00
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Wallet.Wise.DAL", "Wallet.Wise.DAL\Wallet.Wise.DAL.csproj", "{E23B1E21-C8EF-4AFA-ADBA-414AE8D6729D}"
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.11.35303.130
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Wallet.Wise.DAL", "Wallet.Wise.DAL\Wallet.Wise.DAL.csproj", "{E23B1E21-C8EF-4AFA-ADBA-414AE8D6729D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Wallet.Wise.BLL", "Wallet.Wise.BLL\Wallet.Wise.BLL.csproj", "{56213543-0391-4D17-9B7D-9DEA917FB6D4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Wallet.Wise.BLL", "Wallet.Wise.BLL\Wallet.Wise.BLL.csproj", "{56213543-0391-4D17-9B7D-9DEA917FB6D4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Wallet.Wise.WebApp", "Wallet.Wise.WebApp\Wallet.Wise.WebApp.csproj", "{58B08A81-B19F-4D5F-9CEF-EE8EA4F5B845}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Wallet.Wise.WebApp", "Wallet.Wise.WebApp\Wallet.Wise.WebApp.csproj", "{58B08A81-B19F-4D5F-9CEF-EE8EA4F5B845}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Wallet.Wise.Common", "Wallet.Wise.Common\Wallet.Wise.Common.csproj", "{8D065C8B-BA43-4E4C-96E4-01C85F2B5B8A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -23,5 +29,15 @@ Global
 		{58B08A81-B19F-4D5F-9CEF-EE8EA4F5B845}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{58B08A81-B19F-4D5F-9CEF-EE8EA4F5B845}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{58B08A81-B19F-4D5F-9CEF-EE8EA4F5B845}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8D065C8B-BA43-4E4C-96E4-01C85F2B5B8A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8D065C8B-BA43-4E4C-96E4-01C85F2B5B8A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8D065C8B-BA43-4E4C-96E4-01C85F2B5B8A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8D065C8B-BA43-4E4C-96E4-01C85F2B5B8A}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {86F432DD-47CE-43AD-8D79-0478DEDAC961}
 	EndGlobalSection
 EndGlobal
