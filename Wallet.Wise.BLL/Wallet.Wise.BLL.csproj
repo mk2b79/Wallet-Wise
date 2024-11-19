@@ -7,6 +7,7 @@
     </PropertyGroup>
 
     <ItemGroup>
+      <ProjectReference Include="..\Wallet.Wise.Common\Wallet.Wise.Common.csproj" />
       <ProjectReference Include="..\Wallet.Wise.DAL\Wallet.Wise.DAL.csproj" />
     </ItemGroup>
 
