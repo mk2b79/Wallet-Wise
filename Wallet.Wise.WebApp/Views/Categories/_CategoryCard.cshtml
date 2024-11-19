@@ -1,0 +1,16 @@
+@model Wallet.Wise.DAL.Entities.Category
+
+<div class="col-md-4 mb-3">
+    <div class="card">
+        <div class="card-body">
+            <h5 class="card-title">@Model.Name</h5>
+            <p class="card-text">
+                Type: @Model.CategoryType<br />
+                Currency: @Model.CurrencyCode
+            </p>
+            <!-- Кнопки управління -->
+            <a href="@Url.Action("Edit", "Categories", new { id = Model.Id })" class="btn btn-primary">Edit</a>
+            <a href="@Url.Action("Index", "Records", new { id = Model.Id })" class="btn btn-danger">Transactions</a>
+        </div>
+    </div>
+</div>
