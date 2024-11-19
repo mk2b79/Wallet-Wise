@@ -1,4 +1,5 @@
-@model Wallet.Wise.DAL.Entities.Category
+@using Wallet.Wise.BLL.DTOs
+@model CategoryWithAmontDto
 
 <div class="col-md-4 mb-3">
     <div class="card">
@@ -6,7 +7,7 @@
             <h5 class="card-title">@Model.Name</h5>
             <p class="card-text">
                 Type: @Model.CategoryType<br />
-                Currency: @Model.CurrencyCode
+                Amount:@Model.Amount @Model.CurrencyCode
             </p>
             <!-- Кнопки управління -->
             <a href="@Url.Action("Edit", "Categories", new { id = Model.Id })" class="btn btn-primary">Edit</a>

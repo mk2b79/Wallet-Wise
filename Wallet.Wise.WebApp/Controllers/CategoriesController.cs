@@ -13,6 +13,7 @@ public class CategoriesController : Controller
     {
         _categoryServices = categoryServices;
     }
+
     public IActionResult Index(string SelectedMonth)
     {
         var selectedDate = DateTime.TryParseExact(SelectedMonth + "-01", "yyyy-MM-dd", CultureInfo.InvariantCulture, DateTimeStyles.None, out var date) 
@@ -20,7 +21,7 @@ public class CategoriesController : Controller
             : DateTime.Now;
         ViewData["SelectedMonth"] = selectedDate.ToString("yyyy-MM");
         
-        var categories = _categoryServices.GetAllAsync().Result;
+        var categories = _categoryServices.GetAllByMountAsync(selectedDate).Result;
         return View(categories);
     }
     [HttpGet]
@@ -28,8 +29,6 @@ public class CategoriesController : Controller
     {
         return View();
     }
-
-    // Обробка додавання нової категорії
     [HttpPost]
     public IActionResult Create(Category category)
     {

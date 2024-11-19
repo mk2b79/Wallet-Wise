@@ -1,7 +1,43 @@
-@using Wallet.Wise.DAL.Entities
-@model Category
+﻿@using Wallet.Wise.DAL.Entities
+@model Wallet.Wise.DAL.Entities.Category
 
 @{
-    ViewData["Title"] = "Add New Category";
+    ViewData["Title"] = "Create";
 }
 
+<h1>Create</h1>
+
+<h4>Category</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Name" class="control-label"></label>
+                <input asp-for="Name" class="form-control" />
+                <span asp-validation-for="Name" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CurrencyCode" class="control-label"></label>
+                <input asp-for="CurrencyCode" class="form-control" />
+                <span asp-validation-for="CurrencyCode" class="text-danger"></span>
+            </div>
+             <div class="form-group">
+                 <label asp-for="CategoryType"></label>
+                 <select asp-for="CategoryType" asp-items="Html.GetEnumSelectList<CategoryType>()" class="form-select"></select>
+             </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
