@@ -1,13 +1,28 @@
+using Microsoft.EntityFrameworkCore;
 using Wallet.Wise.BLL.Services.IServices;
+using Wallet.Wise.DAL.Context;
 using Wallet.Wise.DAL.Entities;
 
 namespace Wallet.Wise.BLL.Services;
 
 public class CategoryServices:ICategoryServices
 {
-    public Task<IEnumerable<Category>> GetAllAsync()
+    private readonly WalletWiseContext _context;
+    public CategoryServices(WalletWiseContext context)
     {
-        throw new NotImplementedException();
+        _context = context;
+    }
+
+    public async Task<IEnumerable<Category>> GetAllAsync()
+    {
+        return await _context.Categories.ToListAsync();
+    }
+    
+    public async Task<IEnumerable<Category>> GetAllByMountAsync(DateTime mount)
+    {
+        return await _context.Categories
+            .Where(c => c.Records.Any(r => r.Date.Year == mount.Year && r.Date.Month == mount.Month))
+            .ToListAsync();
     }
 
     public Task<Category> GetByIdAsync(int id)
