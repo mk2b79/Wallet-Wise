@@ -28,9 +28,10 @@ public class RecordServices:IRecordServices
         throw new NotImplementedException();
     }
 
-    public Task AddAsync(Record record)
+    public async Task AddAsync(Record record)
     {
-        throw new NotImplementedException();
+        await _context.Records.AddAsync(record);
+        await _context.SaveChangesAsync();
     }
 
     public Task UpdateAsync(Record record)
@@ -38,8 +39,14 @@ public class RecordServices:IRecordServices
         throw new NotImplementedException();
     }
 
-    public Task DeleteAsync(int id)
+    public async Task DeleteAsync(int id)
     {
-        throw new NotImplementedException();
+        if (await _context.Records.FindAsync(id) is Record find)
+        {
+            _context.Records.Remove(find);
+            await _context.SaveChangesAsync();
+            return;
+        }
+        throw new Exception("Record not found");
     }
 }

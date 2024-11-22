@@ -17,6 +17,7 @@ builder.Services.AddDbContext<WalletWiseContext>(options => options.UseSqlite("D
 builder.Services.AddAutoMapper(typeof(MappingProfile));
 //BLL Services Injection
 builder.Services.AddScoped<CategoryServices>();
+builder.Services.AddScoped<RecordServices>();
 
 //Pipe-line http request
 var app = builder.Build();

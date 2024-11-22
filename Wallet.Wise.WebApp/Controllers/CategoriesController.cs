@@ -21,10 +21,9 @@ public class CategoriesController : Controller
             : DateTime.Now;
         ViewData["SelectedMonth"] = selectedDate.ToString("yyyy-MM");
         
-        var categories = _categoryServices.GetAllByMountAsync(selectedDate).Result;
+        var categories = _categoryServices.GetAllWithMountAsync(selectedDate).Result;
         return View(categories);
     }
-    [HttpGet]
     public IActionResult Create()
     {
         return View();
@@ -38,6 +37,28 @@ public class CategoriesController : Controller
             return RedirectToAction("Index");
         }
         return View(category);
+    }
+    [HttpGet]
+    public IActionResult Edit(int id)
+    {
+        var data= _categoryServices.GetByIdAsync(id).Result;
+        return View(data);
+    }
+    [HttpPost]
+    public IActionResult Edit(Category category)
+    {
+        if (ModelState.IsValid)
+        {
+            _categoryServices.UpdateAsync(category).Wait();
+            return RedirectToAction("Index");
+        }
+        return View(category);
+    }
+    [HttpGet]
+    public IActionResult Delete(int id)
+    {
+        _categoryServices.DeleteAsync(id).Wait();
+        return RedirectToAction("Index");
     }
 
    

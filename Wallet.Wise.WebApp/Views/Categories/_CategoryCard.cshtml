@@ -6,12 +6,12 @@
         <div class="card-body">
             <h5 class="card-title">@Model.Name</h5>
             <p class="card-text">
-                Type: @Model.CategoryType<br />
                 Amount:@Model.Amount @Model.CurrencyCode
             </p>
             <!-- Кнопки управління -->
             <a href="@Url.Action("Edit", "Categories", new { id = Model.Id })" class="btn btn-primary">Edit</a>
-            <a href="@Url.Action("Index", "Records", new { id = Model.Id })" class="btn btn-danger">Transactions</a>
+            <a href="@Url.Action("Index", "Records", new { CategoryId = Model.Id,Mount=ViewData["SelectedMonth"]})" class="btn btn-danger">Transactions</a>
+            <a href="@Url.Action("Create", "Records", new { CategoryId = Model.Id})" class="btn btn-success">Add</a>
         </div>
     </div>
 </div>
