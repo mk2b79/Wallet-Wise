@@ -1,3 +1,4 @@
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Wallet.Wise.BLL.Services;
 using Wallet.Wise.Common.Mappings;
@@ -9,6 +10,9 @@ builder.Services.AddControllersWithViews();
 
 //Add DbContext Injection
 builder.Services.AddDbContext<WalletWiseContext>(options => options.UseSqlite("Data source=../WalletWiseDb.sql"));
+//
+// builder.Services.AddAuthorization();
+// builder.Services.AddAuthentication().AddCookie(IdentityConstants.ApplicationScheme);
 //Add AutoMapper Injection
 builder.Services.AddAutoMapper(typeof(MappingProfile));
 //BLL Services Injection
